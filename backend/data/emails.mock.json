@@ -1,0 +1,52 @@
+[
+  {
+    "sender": "ceo@company.com",
+    "subject": "Weekly leadership sync",
+    "body": "Hi team, this is a quick reminder that our weekly leadership sync is scheduled for tomorrow at 11 AM. During the meeting, we will review our current OKRs, discuss progress across teams, and go over any key blockers that may impact delivery timelines. Please come prepared with brief updates and any topics you’d like to raise for discussion."
+  },
+  {
+    "sender": "billing@vendor.com",
+    "subject": "Invoice #INV-20491 for December services",
+    "body": "Hello, attached you will find Invoice #INV-20491 covering services provided during the month of December. The total amount due is $1,230.00, with payment requested within 7 days of the invoice date. If you have any questions regarding the charges or require additional documentation, please let us know. Thank you for your continued business."
+  },
+  {
+    "sender": "support@tooling.com",
+    "subject": "Ticket Update: API requests failing",
+    "body": "We have completed our investigation regarding the API request failures you reported. The issue was caused by a recent change to our rate-limiting policy, which affected certain request patterns. To resolve this, please update your retry logic and ensure the required headers are included as outlined in our updated documentation. Let us know if the issue persists after making these changes."
+  },
+  {
+    "sender": "recruiter@talent.com",
+    "subject": "Opportunity: Frontend Engineer role",
+    "body": "I came across your profile and was impressed by your background and experience. We are currently hiring for a Frontend Engineer role and would love to connect to discuss how your skills align with our team’s needs. Would you be available for a quick introductory call sometime this week to explore the opportunity further?"
+  },
+  {
+    "sender": "random@spammy.biz",
+    "subject": "You won a free iPhone!!!",
+    "body": "Congratulations! You have been selected as a lucky winner in our exclusive promotion and are eligible to receive a brand-new iPhone at no cost. Simply click the link below to confirm your details and claim your prize. This is a limited-time offer, so act fast before the opportunity expires!"
+  },
+  {
+    "sender": "hr@company.com",
+    "subject": "Reminder: Complete your annual self-review",
+    "body": "Hi, this is a friendly reminder to complete your annual self-review in the HR portal by the end of the day on Friday. The self-review is an important part of our performance evaluation process and helps ensure meaningful discussions during upcoming review cycles. Please reach out to the HR team if you have any questions or need assistance accessing the portal."
+  },
+  {
+    "sender": "noreply@github.com",
+    "subject": "Security alert: New sign-in detected",
+    "body": "We detected a new sign-in to your GitHub account from a device or location we did not recognize. If this activity was initiated by you, no further action is required. However, if you do not recognize this sign-in, we strongly recommend updating your password immediately and reviewing your account’s security settings to prevent unauthorized access."
+  },
+  {
+    "sender": "product@saasapp.com",
+    "subject": "New feature released: Advanced analytics dashboard",
+    "body": "We’re excited to announce the release of our new advanced analytics dashboard, designed to provide deeper insights into your data and usage trends. The dashboard includes customizable reports, improved visualizations, and performance metrics to help you make more informed decisions. You can start exploring the new feature by logging into your account today."
+  },
+  {
+    "sender": "finance@company.com",
+    "subject": "Expense reimbursement approved",
+    "body": "Your recent expense reimbursement request has been reviewed and approved by the finance team. The approved amount will be credited to your registered bank account within 3–5 business days. If you have any questions about the reimbursement or notice any discrepancies, please contact the finance department for clarification."
+  },
+  {
+    "sender": "offers@dealsnow.net",
+    "subject": "Exclusive deal just for you!",
+    "body": "We’re offering you exclusive access to a limited-time promotion featuring special discounts on top brands. This personalized deal is available only for a short period, so don’t miss the opportunity to save big on products you love. You can unsubscribe from these offers at any time if you no longer wish to receive them."
+  }
+]
