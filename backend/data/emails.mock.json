@@ -48,5 +48,10 @@
     "sender": "offers@dealsnow.net",
     "subject": "Exclusive deal just for you!",
     "body": "We’re offering you exclusive access to a limited-time promotion featuring special discounts on top brands. This personalized deal is available only for a short period, so don’t miss the opportunity to save big on products you love. You can unsubscribe from these offers at any time if you no longer wish to receive them."
+  },
+  {
+    "sender": "akashceo@company.com",
+    "subject": "Weekly leadership sync",
+    "body": "Hi team, this is a quick reminder that our weekly leadership sync is scheduled for tomorrow at 11 AM. During the meeting, we will review our current OKRs, discuss progress across teams, and go over any key blockers that may impact delivery timelines. Please come prepared with brief updates and any topics you’d like to raise for discussion."
   }
 ]

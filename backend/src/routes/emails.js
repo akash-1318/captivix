@@ -12,6 +12,15 @@ const { eq, ilike, and, desc } = require("drizzle-orm");
 
 const router = express.Router();
 
+const checkEmailExists = async (sender, subject, db) => {
+  const existing = await db
+    .select()
+    .from(emails)
+    .where(and(eq(emails.sender, sender), eq(emails.subject, subject)))
+    .limit(1);
+  return existing.length > 0;
+};
+
 //  * Loads mock emails from data/emails.mock.json, summarizes/categorizes with OpenAI, stores in DB.
 
 router.post("/ingest", async (req, res) => {
@@ -31,6 +40,7 @@ router.post("/ingest", async (req, res) => {
     }
 
     const inserted = [];
+    let skipped = 0;
 
     for (const email of list) {
       const sender = String(email.sender || "").trim();
@@ -39,9 +49,18 @@ router.post("/ingest", async (req, res) => {
 
       if (!sender || !subject || !body) continue;
 
+      // Check if email already exists (DUPLICATE PREVENTION)
+      const exists = await checkEmailExists(sender, subject, db);
+      if (exists) {
+        console.log(`Skipping duplicate: ${subject}`);
+        skipped++;
+        continue;
+      }
+
+      // Summarize with AI
       const ai = await summarizeEmail({ sender, subject, body });
 
-      // optional attachment extraction
+      // Optional attachment extraction
       let extracted = null;
       if (email.attachmentPath) {
         const abs = path.isAbsolute(email.attachmentPath)
@@ -51,6 +70,7 @@ router.post("/ingest", async (req, res) => {
         if (items) extracted = { invoiceItems: items };
       }
 
+      // Insert new email
       const rows = await db
         .insert(emails)
         .values({
@@ -66,10 +86,16 @@ router.post("/ingest", async (req, res) => {
       inserted.push(rows[0]);
     }
 
-    res.json({ insertedCount: inserted.length, inserted });
+    res.json({
+      success: true,
+      insertedCount: inserted.length,
+      skippedCount: skipped,
+      message: `Ingested ${inserted.length} new email(s). Skipped ${skipped} duplicate(s).`,
+      inserted,
+    });
   } catch (e) {
     console.error(e);
-    res.status(500).json({ error: "Failed to ingest emails" });
+    res.status(500).json({ error: e.message || "Failed to ingest emails" });
   }
 });
 

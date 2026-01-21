@@ -1,0 +1,1 @@
+ALTER TABLE "emails" ADD CONSTRAINT "emails_sender_subject_unique" UNIQUE("sender","subject");
